@@ -1,0 +1,256 @@
+{
+  "_meta": {
+    "collection": "vue_panoramique_snapshots",
+    "description": "Document NoSQL représentant l'état complet du tableau de bord Vue Panoramique de l'application AUDACE - ART Cameroun",
+    "version": "1.0.0",
+    "created_at": "2025-05-15T12:00:00Z",
+    "ttl_hours": 24
+  },
+
+  "filtre": {
+    "pays": "Cameroun",
+    "date_debut": "15 Mai 2025",
+    "date_fin": "16 Mai 2025",
+    "periode": "24h",
+    "timestamp_debut": 1747267200000,
+    "timestamp_fin": 1747353600000
+  },
+
+  "kpis": {
+    "volume_collecte": {
+      "label": "Volume de collecte (24h)",
+      "valeur": "4 532 184",
+      "valeur_brut": 4532184,
+      "unite": "",
+      "variation_pct": 12.5,
+      "description": "Mesures reçues",
+      "couleur_hex": "#3FB950",
+      "icon": "cell_tower"
+    },
+    "sondes_actives": {
+      "label": "Sondes actives (24h)",
+      "valeur": "12 847",
+      "valeur_brut": 12847,
+      "unite": "",
+      "variation_pct": 8.3,
+      "description": "Citoyens contributeurs",
+      "couleur_hex": "#58A6FF",
+      "icon": "people"
+    },
+    "debit_moyen_national": {
+      "label": "Débit moyen national",
+      "valeur": "23.45",
+      "valeur_brut": 23.45,
+      "unite": "Mbps",
+      "variation_pct": -3.2,
+      "description": "Download moyen",
+      "couleur_hex": "#8957E5",
+      "icon": "speed"
+    },
+    "index_conformite_global": {
+      "label": "Index de conformité global",
+      "valeur": "87.3",
+      "valeur_brut": 87.3,
+      "unite": "%",
+      "variation_pct": 2.7,
+      "description": "Conformité aux seuils ART",
+      "couleur_hex": "#F0883E",
+      "icon": "verified_user"
+    }
+  },
+
+  "signal_radio": {
+    "rsrp": {
+      "label": "RSRP",
+      "description": "Puissance (dBm)",
+      "valeur": -92.0,
+      "unite": "dBm",
+      "min": -140,
+      "max": -50,
+      "seuil_bon": -100,
+      "seuil_moyen": -110,
+      "statut": "Bon"
+    },
+    "rsrq": {
+      "label": "RSRQ",
+      "description": "Qualité (dB)",
+      "valeur": -9.5,
+      "unite": "dB",
+      "min": -20,
+      "max": 0,
+      "seuil_bon": -10,
+      "seuil_moyen": -15,
+      "statut": "Moyen"
+    },
+    "sinr": {
+      "label": "SINR",
+      "description": "Pureté (dB)",
+      "valeur": 12.3,
+      "unite": "dB",
+      "min": -20,
+      "max": 30,
+      "seuil_bon": 10,
+      "seuil_moyen": 0,
+      "statut": "Bon"
+    }
+  },
+
+  "repartition_tests": {
+    "total": 4530000,
+    "mobile": {
+      "total": 3180000,
+      "pct": 70.2,
+      "label": "Mobile"
+    },
+    "wifi": {
+      "total": 1350000,
+      "pct": 29.8,
+      "label": "WiFi"
+    }
+  },
+
+  "score_qoe": {
+    "description": "Score QoE Global – Expérience Utilisateur",
+    "web": 75.0,
+    "telechargement": 68.0,
+    "video": 82.0,
+    "voix": 90.0,
+    "jeux": 60.0
+  },
+
+  "top_zones_surveillees": [
+    {
+      "rang": 1,
+      "localite": "Kousseri",
+      "region": "Extrême-Nord",
+      "conformite_pct": 45.0,
+      "tests_24h": 312,
+      "tendance_pct": -15.0,
+      "operateur_dominant": "NEXTTEL",
+      "coordonnees": { "lat": 12.08, "lng": 15.03 }
+    },
+    {
+      "rang": 2,
+      "localite": "Mamfe",
+      "region": "Sud-Ouest",
+      "conformite_pct": 52.0,
+      "tests_24h": 278,
+      "tendance_pct": -8.0,
+      "operateur_dominant": "MTN",
+      "coordonnees": { "lat": 5.76, "lng": 9.29 }
+    },
+    {
+      "rang": 3,
+      "localite": "Batouri",
+      "region": "Est",
+      "conformite_pct": 58.0,
+      "tests_24h": 189,
+      "tendance_pct": -5.0,
+      "operateur_dominant": "ORANGE",
+      "coordonnees": { "lat": 4.43, "lng": 14.36 }
+    },
+    {
+      "rang": 4,
+      "localite": "Fundong",
+      "region": "Nord-Ouest",
+      "conformite_pct": 63.0,
+      "tests_24h": 254,
+      "tendance_pct": 0.0,
+      "operateur_dominant": "MTN",
+      "coordonnees": { "lat": 6.27, "lng": 10.27 }
+    },
+    {
+      "rang": 5,
+      "localite": "Abong-Mbang",
+      "region": "Est",
+      "conformite_pct": 67.0,
+      "tests_24h": 201,
+      "tendance_pct": 3.0,
+      "operateur_dominant": "CAMTEL",
+      "coordonnees": { "lat": 3.99, "lng": 13.18 }
+    }
+  ],
+
+  "conformite_par_operateur": [
+    {
+      "nom": "MTN",
+      "score_pct": 89.7,
+      "couleur_hex": "#F0C000",
+      "nb_sondes": 5200,
+      "nb_mesures": 1850000
+    },
+    {
+      "nom": "ORANGE",
+      "score_pct": 86.1,
+      "couleur_hex": "#F0883E",
+      "nb_sondes": 4100,
+      "nb_mesures": 1430000
+    },
+    {
+      "nom": "CAMTEL",
+      "score_pct": 84.3,
+      "couleur_hex": "#3FB950",
+      "nb_sondes": 2100,
+      "nb_mesures": 750000
+    },
+    {
+      "nom": "NEXTTEL",
+      "score_pct": 75.8,
+      "couleur_hex": "#8957E5",
+      "nb_sondes": 1447,
+      "nb_mesures": 500000
+    }
+  ],
+
+  "heatmap_couverture": {
+    "resolution_h3": 5,
+    "mode_affichage": "qualite_globale",
+    "popup_actif": {
+      "ville": "Bafoussam",
+      "region": "Région de l'Ouest",
+      "operateur": "MTN",
+      "conformite_pct": 78.0,
+      "tests_24h": 1243,
+      "coordonnees": { "lat": 5.47, "lng": 10.41 }
+    },
+    "cellules": [
+      { "id": "CM-HEX-001", "lat": 12.08, "lng": 15.03, "qualite_pct": 45.0, "categorie": "tres_mauvaise" },
+      { "id": "CM-HEX-002", "lat": 11.85, "lng": 15.31, "qualite_pct": 52.0, "categorie": "mauvaise" },
+      { "id": "CM-HEX-003", "lat": 10.59, "lng": 13.52, "qualite_pct": 78.0, "categorie": "bonne" },
+      { "id": "CM-HEX-004", "lat": 10.30, "lng": 14.04, "qualite_pct": 85.0, "categorie": "bonne" },
+      { "id": "CM-HEX-005", "lat": 9.30,  "lng": 13.40, "qualite_pct": 91.0, "categorie": "excellente" },
+      { "id": "CM-HEX-006", "lat": 7.36,  "lng": 12.36, "qualite_pct": 63.0, "categorie": "moyenne" },
+      { "id": "CM-HEX-007", "lat": 6.18,  "lng": 10.41, "qualite_pct": 88.0, "categorie": "bonne" },
+      { "id": "CM-HEX-008", "lat": 5.47,  "lng": 10.41, "qualite_pct": 78.0, "categorie": "bonne" },
+      { "id": "CM-HEX-009", "lat": 4.05,  "lng": 9.69,  "qualite_pct": 82.0, "categorie": "bonne" },
+      { "id": "CM-HEX-010", "lat": 3.87,  "lng": 11.52, "qualite_pct": 90.0, "categorie": "excellente" },
+      { "id": "CM-HEX-011", "lat": 2.93,  "lng": 11.31, "qualite_pct": 55.0, "categorie": "moyenne" },
+      { "id": "CM-HEX-012", "lat": 5.76,  "lng": 9.29,  "qualite_pct": 52.0, "categorie": "mauvaise" },
+      { "id": "CM-HEX-013", "lat": 4.43,  "lng": 14.36, "qualite_pct": 58.0, "categorie": "mauvaise" },
+      { "id": "CM-HEX-014", "lat": 6.27,  "lng": 10.27, "qualite_pct": 63.0, "categorie": "moyenne" },
+      { "id": "CM-HEX-015", "lat": 3.99,  "lng": 13.18, "qualite_pct": 67.0, "categorie": "moyenne" },
+      { "id": "CM-HEX-016", "lat": 8.50,  "lng": 13.60, "qualite_pct": 75.0, "categorie": "bonne" },
+      { "id": "CM-HEX-017", "lat": 11.00, "lng": 14.20, "qualite_pct": 70.0, "categorie": "bonne" },
+      { "id": "CM-HEX-018", "lat": 6.50,  "lng": 11.80, "qualite_pct": 83.0, "categorie": "bonne" },
+      { "id": "CM-HEX-019", "lat": 4.80,  "lng": 11.50, "qualite_pct": 92.0, "categorie": "excellente" },
+      { "id": "CM-HEX-020", "lat": 3.50,  "lng": 10.30, "qualite_pct": 38.0, "categorie": "tres_mauvaise" }
+    ]
+  },
+
+  "methodologie_conformite": {
+    "formule": "S = Σ(Wᵢ × Cᵢ) / ΣWᵢ",
+    "variables": {
+      "S": "Score global de conformité",
+      "Ci": "Taux de conformité de la métrique i",
+      "Wi": "Coefficient d'importance défini par l'ART"
+    },
+    "ponderations": [
+      { "metrique": "Débit descendant", "wi": 0.30 },
+      { "metrique": "Débit montant",    "wi": 0.20 },
+      { "metrique": "Latence",          "wi": 0.20 },
+      { "metrique": "Taux de perte",    "wi": 0.15 },
+      { "metrique": "Qualité voix",     "wi": 0.15 }
+    ],
+    "lien_detail": "/conformite/methodologie"
+  }
+}

@@ -1,0 +1,822 @@
+{
+  "_meta": {
+    "collection": "radio_audit_snapshots",
+    "description": "Document NoSQL représentant l'état complet de l'onglet Cartographie & Infrastructure (Radio Audit) — AUDACE ART Cameroun",
+    "version": "1.0.0",
+    "created_at": "2025-05-15T06:00:00Z",
+    "ttl_hours": 168,
+    "commentaire": "Ce document est généré toutes les heures par le pipeline d'agrégation des sondes. Les cellules heatmap (section heatmap_h3.cellules) peuvent dépasser 50 000 entrées en prod — paginer ou filtrer côté serveur selon le zoom/bbox."
+  },
+  "filtre": {
+    "_commentaire": "Filtres actifs sélectionnés par l'utilisateur dans la barre supérieure. Persistés dans localStorage et rechargés à chaque session.",
+    "operateur": "Tous",
+    "technologie": "4G/5G",
+    "periode": "7 derniers jours",
+    "options_operateur": [
+      "Tous",
+      "MTN",
+      "ORANGE",
+      "CAMTEL",
+      "NEXTTEL"
+    ],
+    "options_technologie": [
+      "Tout",
+      "2G",
+      "3G",
+      "4G/5G",
+      "5G uniquement"
+    ],
+    "options_periode": [
+      "24h",
+      "7 derniers jours",
+      "30 jours",
+      "3 mois"
+    ]
+  },
+  "heatmap_h3": {
+    "_commentaire": "Section §1 — Heatmap H3 haute résolution. Chaque cellule est un hexagone H3 (résolution 8 ou 9) avec la valeur RSRP moyenne mesurée par les sondes mobiles dans cette zone.",
+    "calque_actif": "RSRP",
+    "options_calque": [
+      "RSRP",
+      "RSRQ",
+      "SINR"
+    ],
+    "mode_carte": "Carte",
+    "options_mode": [
+      "Carte",
+      "Satellite"
+    ],
+    "zoom_niveau": 13,
+    "centre": {
+      "lat": 3.848,
+      "lng": 11.502
+    },
+    "popup_actif": {
+      "_commentaire": "Popup affiché lors du clic sur une cellule H3. null si aucune cellule sélectionnée.",
+      "quartier": "Mbankolo",
+      "operateur": "MTN",
+      "rsrp_moyen": -92.0,
+      "tests": 128,
+      "conformite_pct": 82.0,
+      "coordonnees": {
+        "lat": 3.906,
+        "lng": 11.538
+      }
+    },
+    "cellules": {
+      "_commentaire": "Liste des hexagones H3. En production : potentiellement > 50 000 cellules. Filtrer par bbox côté API avant envoi au client. id = index H3 natif (ex: 881f1d4a85fffff).",
+      "_champs": {
+        "id": "Identifiant H3 unique (string, ex: '881f1d4a85fffff')",
+        "lat": "Latitude du centroïde de l'hexagone (double)",
+        "lng": "Longitude du centroïde de l'hexagone (double)",
+        "rsrp_moyen": "RSRP moyen de toutes les mesures dans la cellule, en dBm (double, ex: -92.0)",
+        "rsrq_moyen": "RSRQ moyen en dB (double, optionnel selon calque actif)",
+        "sinr_moyen": "SINR moyen en dB (double, optionnel selon calque actif)",
+        "nb_tests": "Nombre total de mesures reçues dans cette cellule (int)",
+        "categorie": "Catégorie qualité calculée : 'excellent'|'bon'|'moyen'|'mauvais'|'critique'",
+        "nom_quartier": "Nom du quartier obtenu par géocodage inverse (string|null)"
+      },
+      "donnees": [
+        {
+          "id": "881f1d4a85fffff",
+          "lat": 3.906,
+          "lng": 11.538,
+          "rsrp_moyen": -92.0,
+          "rsrq_moyen": -9.5,
+          "sinr_moyen": 12.3,
+          "nb_tests": 128,
+          "categorie": "bon",
+          "nom_quartier": "Mbankolo"
+        },
+        {
+          "id": "881f1d4a87fffff",
+          "lat": 3.891,
+          "lng": 11.515,
+          "rsrp_moyen": -88.0,
+          "rsrq_moyen": -8.2,
+          "sinr_moyen": 14.1,
+          "nb_tests": 215,
+          "categorie": "bon",
+          "nom_quartier": "Biyem-Assi"
+        },
+        {
+          "id": "881f1d4a80fffff",
+          "lat": 3.852,
+          "lng": 11.498,
+          "rsrp_moyen": -78.0,
+          "rsrq_moyen": -7.0,
+          "sinr_moyen": 18.5,
+          "nb_tests": 342,
+          "categorie": "excellent",
+          "nom_quartier": "Centre-ville"
+        },
+        {
+          "id": "881f1d4a81fffff",
+          "lat": 3.831,
+          "lng": 11.475,
+          "rsrp_moyen": -96.0,
+          "rsrq_moyen": -11.0,
+          "sinr_moyen": 8.2,
+          "nb_tests": 87,
+          "categorie": "moyen",
+          "nom_quartier": "Efoulan"
+        },
+        {
+          "id": "881f1d4a82fffff",
+          "lat": 3.815,
+          "lng": 11.502,
+          "rsrp_moyen": -82.0,
+          "rsrq_moyen": -8.8,
+          "sinr_moyen": 15.3,
+          "nb_tests": 196,
+          "categorie": "bon",
+          "nom_quartier": "Nkolbisson"
+        },
+        {
+          "id": "881f1d4a83fffff",
+          "lat": 3.863,
+          "lng": 11.46,
+          "rsrp_moyen": -104.0,
+          "rsrq_moyen": -13.5,
+          "sinr_moyen": 4.1,
+          "nb_tests": 43,
+          "categorie": "mauvais",
+          "nom_quartier": "Ngoa-Ekellé"
+        },
+        {
+          "id": "881f1d4a84fffff",
+          "lat": 3.878,
+          "lng": 11.488,
+          "rsrp_moyen": -113.0,
+          "rsrq_moyen": -16.2,
+          "sinr_moyen": -1.2,
+          "nb_tests": 19,
+          "categorie": "critique",
+          "nom_quartier": "Périphérie Est"
+        },
+        {
+          "id": "881f1d4a86fffff",
+          "lat": 3.845,
+          "lng": 11.522,
+          "rsrp_moyen": -99.0,
+          "rsrq_moyen": -12.1,
+          "sinr_moyen": 6.4,
+          "nb_tests": 61,
+          "categorie": "moyen",
+          "nom_quartier": "Mvan"
+        },
+        {
+          "id": "881f1d4a88fffff",
+          "lat": 3.92,
+          "lng": 11.555,
+          "rsrp_moyen": -107.0,
+          "rsrq_moyen": -14.8,
+          "sinr_moyen": 2.3,
+          "nb_tests": 32,
+          "categorie": "mauvais",
+          "nom_quartier": "Simbock"
+        },
+        {
+          "id": "881f1d4a89fffff",
+          "lat": 3.835,
+          "lng": 11.545,
+          "rsrp_moyen": -84.0,
+          "rsrq_moyen": -9.0,
+          "sinr_moyen": 13.7,
+          "nb_tests": 178,
+          "categorie": "bon",
+          "nom_quartier": "Obili"
+        },
+        {
+          "id": "881f1d4a8afffff",
+          "lat": 3.8,
+          "lng": 11.49,
+          "rsrp_moyen": -91.0,
+          "rsrq_moyen": -10.3,
+          "sinr_moyen": 11.0,
+          "nb_tests": 145,
+          "categorie": "bon",
+          "nom_quartier": "Mvog-Ada"
+        },
+        {
+          "id": "881f1d4a8bfffff",
+          "lat": 3.87,
+          "lng": 11.53,
+          "rsrp_moyen": -76.0,
+          "rsrq_moyen": -6.5,
+          "sinr_moyen": 20.1,
+          "nb_tests": 289,
+          "categorie": "excellent",
+          "nom_quartier": "Bastos"
+        },
+        {
+          "id": "881f1d4a8cfffff",
+          "lat": 3.855,
+          "lng": 11.465,
+          "rsrp_moyen": -111.0,
+          "rsrq_moyen": -17.0,
+          "sinr_moyen": -2.5,
+          "nb_tests": 12,
+          "categorie": "critique",
+          "nom_quartier": "Briqueterie"
+        },
+        {
+          "id": "881f1d4a8dfffff",
+          "lat": 3.822,
+          "lng": 11.515,
+          "rsrp_moyen": -94.0,
+          "rsrq_moyen": -10.8,
+          "sinr_moyen": 9.5,
+          "nb_tests": 103,
+          "categorie": "moyen",
+          "nom_quartier": "Emana"
+        },
+        {
+          "id": "881f1d4a8efffff",
+          "lat": 3.895,
+          "lng": 11.478,
+          "rsrp_moyen": -86.0,
+          "rsrq_moyen": -9.1,
+          "sinr_moyen": 13.2,
+          "nb_tests": 167,
+          "categorie": "bon",
+          "nom_quartier": "Tsinga"
+        }
+      ]
+    }
+  },
+  "zones_blanches": {
+    "_commentaire": "Section §2 — Zones sans couverture. Les zones blanches sont des zones où aucune sonde n'a envoyé de mesure. Les zones mortes sont des zones où le réseau est techniquement présent mais en panne (hors service).",
+    "surface_non_couverte_pct": 18.7,
+    "nb_zones_blanches": 1243,
+    "nb_zones_mortes": 387,
+    "afficher_zones_blanches": true,
+    "afficher_zones_mortes": true,
+    "points_blancs": {
+      "_commentaire": "Échantillon de 20 points représentatifs. En prod : peut contenir des milliers de points — utiliser un clustering spatial (ex: supercluster) pour l'affichage.",
+      "donnees": [
+        {
+          "lat": 12.08,
+          "lng": 15.03
+        },
+        {
+          "lat": 11.42,
+          "lng": 14.65
+        },
+        {
+          "lat": 10.93,
+          "lng": 15.45
+        },
+        {
+          "lat": 9.81,
+          "lng": 15.1
+        },
+        {
+          "lat": 8.55,
+          "lng": 14.2
+        },
+        {
+          "lat": 7.2,
+          "lng": 15.5
+        },
+        {
+          "lat": 6.12,
+          "lng": 14.8
+        },
+        {
+          "lat": 5.35,
+          "lng": 13.9
+        },
+        {
+          "lat": 4.6,
+          "lng": 14.5
+        },
+        {
+          "lat": 3.25,
+          "lng": 15.0
+        },
+        {
+          "lat": 2.8,
+          "lng": 13.3
+        },
+        {
+          "lat": 2.1,
+          "lng": 12.1
+        },
+        {
+          "lat": 3.9,
+          "lng": 9.9
+        },
+        {
+          "lat": 5.8,
+          "lng": 9.15
+        },
+        {
+          "lat": 6.5,
+          "lng": 10.0
+        },
+        {
+          "lat": 7.1,
+          "lng": 11.2
+        },
+        {
+          "lat": 8.3,
+          "lng": 12.6
+        },
+        {
+          "lat": 9.6,
+          "lng": 13.0
+        },
+        {
+          "lat": 10.2,
+          "lng": 14.0
+        },
+        {
+          "lat": 11.8,
+          "lng": 15.2
+        }
+      ]
+    },
+    "points_morts": {
+      "_commentaire": "Zones mortes identifiées (hors service actif). Affichées en rouge sur la mini-carte.",
+      "donnees": [
+        {
+          "lat": 5.76,
+          "lng": 9.29
+        },
+        {
+          "lat": 4.43,
+          "lng": 14.36
+        },
+        {
+          "lat": 6.27,
+          "lng": 10.27
+        },
+        {
+          "lat": 3.99,
+          "lng": 13.18
+        },
+        {
+          "lat": 12.08,
+          "lng": 15.03
+        },
+        {
+          "lat": 7.36,
+          "lng": 12.36
+        },
+        {
+          "lat": 4.8,
+          "lng": 11.6
+        },
+        {
+          "lat": 5.1,
+          "lng": 10.9
+        },
+        {
+          "lat": 6.9,
+          "lng": 11.8
+        },
+        {
+          "lat": 3.3,
+          "lng": 10.5
+        }
+      ]
+    }
+  },
+  "audit_cellules": {
+    "_commentaire": "Section §3 — Tableau d'audit par Cell ID / TAC. Chaque ligne représente une antenne radio physique (eNB LTE ou gNB 5G). Les données sont agrégées sur la période du filtre actif (ici 7 jours).",
+    "vue_active": "densite",
+    "options_vue": [
+      "densite",
+      "qualite",
+      "congestion"
+    ],
+    "cellules": {
+      "_champs": {
+        "cell_id": "Identifiant unique de la cellule radio (string, ex: '10025_312'). Format: {eNB_ID}_{cellule_ID}",
+        "tac": "Tracking Area Code — zone de paging LTE (int). Regroupe plusieurs cellules d'une même zone géographique",
+        "localisation": "Description lisible de l'emplacement physique de l'antenne (string)",
+        "tests_7j": "Nombre total de tests/mesures reçus de sondes dans le rayon de cette cellule sur 7 jours (int)",
+        "rsrp_moyen": "RSRP moyen calculé depuis toutes les mesures rattachées à cette cellule, en dBm (double)",
+        "debit_moyen_mbps": "Débit descendant moyen mesuré par les sondes attachées à cette cellule, en Mbps (double)",
+        "statut": "Statut synthétique calculé par le moteur de règles ART: 'OK'|'Saturée'|'Charge OK'|'Congestion'"
+      },
+      "donnees": [
+        {
+          "cell_id": "10025_312",
+          "tac": 30245,
+          "localisation": "Yaoundé - Mbankolo",
+          "tests_7j": 1245,
+          "rsrp_moyen": -78.0,
+          "debit_moyen_mbps": 32.5,
+          "statut": "Saturée",
+          "_note": "RSRP bon mais débit dégradé = saturation du canal (trop de connexions simultanées)"
+        },
+        {
+          "cell_id": "10025_313",
+          "tac": 30245,
+          "localisation": "Yaoundé - Bastos",
+          "tests_7j": 987,
+          "rsrp_moyen": -82.0,
+          "debit_moyen_mbps": 28.1,
+          "statut": "Saturée"
+        },
+        {
+          "cell_id": "10025_314",
+          "tac": 30245,
+          "localisation": "Yaoundé - Nkolbisson",
+          "tests_7j": 652,
+          "rsrp_moyen": -87.0,
+          "debit_moyen_mbps": 45.3,
+          "statut": "OK"
+        },
+        {
+          "cell_id": "10025_315",
+          "tac": 30245,
+          "localisation": "Yaoundé - Odza",
+          "tests_7j": 321,
+          "rsrp_moyen": -94.0,
+          "debit_moyen_mbps": 18.7,
+          "statut": "Charge OK"
+        },
+        {
+          "cell_id": "10025_316",
+          "tac": 30245,
+          "localisation": "Yaoundé - Efoulan",
+          "tests_7j": 215,
+          "rsrp_moyen": -102.0,
+          "debit_moyen_mbps": 6.3,
+          "statut": "Congestion",
+          "_note": "RSRP dégradé + débit très bas = congestion radio (mauvaise couverture + surcharge)"
+        }
+      ]
+    }
+  },
+  "heatmap_temporelle": {
+    "_commentaire": "Section §4 — Matrice RSRP 7 jours × 24 heures. matrix[i][j] = RSRP moyen du jour i à l'heure j. Calculé par agrégation de toutes les sondes actives sur la zone sélectionnée. Permet de visualiser les patterns temporels : heures de pointe (dégradation le soir), différences semaine/week-end, anomalies nocturnes.",
+    "jours": [
+      "Lun.",
+      "Mar.",
+      "Mer.",
+      "Jeu.",
+      "Ven.",
+      "Sam.",
+      "Dim."
+    ],
+    "heures": [
+      "00",
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    "matrix": {
+      "_commentaire": "7 lignes (jours) × 24 colonnes (heures). Valeurs en dBm. Lire: matrix[0] = Lundi, matrix[0][0] = Lundi à 00h. Valeur typique: -70 à -110 dBm. Pattern attendu: rouge le soir (19h-22h) = heure de pointe réseau.",
+      "donnees": [
+        [
+          -88,
+          -89,
+          -90,
+          -91,
+          -91,
+          -90,
+          -88,
+          -85,
+          -83,
+          -82,
+          -81,
+          -80,
+          -80,
+          -81,
+          -82,
+          -83,
+          -84,
+          -85,
+          -89,
+          -95,
+          -97,
+          -96,
+          -92,
+          -89
+        ],
+        [
+          -87,
+          -88,
+          -90,
+          -96,
+          -92,
+          -89,
+          -87,
+          -84,
+          -82,
+          -81,
+          -80,
+          -79,
+          -80,
+          -81,
+          -83,
+          -84,
+          -86,
+          -87,
+          -90,
+          -96,
+          -98,
+          -97,
+          -93,
+          -88
+        ],
+        [
+          -86,
+          -88,
+          -89,
+          -90,
+          -91,
+          -90,
+          -87,
+          -84,
+          -82,
+          -81,
+          -80,
+          -79,
+          -80,
+          -81,
+          -83,
+          -84,
+          -85,
+          -86,
+          -90,
+          -95,
+          -97,
+          -96,
+          -92,
+          -88
+        ],
+        [
+          -87,
+          -89,
+          -90,
+          -91,
+          -92,
+          -90,
+          -88,
+          -85,
+          -83,
+          -82,
+          -81,
+          -80,
+          -80,
+          -81,
+          -83,
+          -84,
+          -85,
+          -87,
+          -91,
+          -96,
+          -98,
+          -97,
+          -93,
+          -88
+        ],
+        [
+          -86,
+          -88,
+          -90,
+          -91,
+          -91,
+          -89,
+          -87,
+          -84,
+          -82,
+          -81,
+          -80,
+          -79,
+          -80,
+          -81,
+          -82,
+          -84,
+          -85,
+          -87,
+          -92,
+          -97,
+          -99,
+          -98,
+          -94,
+          -89
+        ],
+        [
+          -84,
+          -86,
+          -87,
+          -88,
+          -88,
+          -87,
+          -86,
+          -84,
+          -82,
+          -81,
+          -80,
+          -79,
+          -79,
+          -80,
+          -81,
+          -82,
+          -83,
+          -84,
+          -86,
+          -88,
+          -90,
+          -89,
+          -87,
+          -85
+        ],
+        [
+          -85,
+          -86,
+          -87,
+          -88,
+          -88,
+          -87,
+          -86,
+          -84,
+          -82,
+          -81,
+          -80,
+          -79,
+          -79,
+          -80,
+          -81,
+          -82,
+          -83,
+          -83,
+          -85,
+          -87,
+          -88,
+          -88,
+          -86,
+          -85
+        ]
+      ]
+    },
+    "analyse_rapide": [
+      "Dégradation récurrente tous les jours à partir de 19h00 (saturation). RSRP chute de ~10 dBm en heure de pointe.",
+      "Baisse anormale détectée le mardi entre 01h et 03h (maintenance ?).",
+      "Week-end : qualité globalement meilleure de 3 à 5 dBm vs jours ouvrés."
+    ]
+  },
+  "statistiques_zone": {
+    "_commentaire": "Section §5 — Statistiques détaillées de la zone sélectionnée sur la heatmap H3. Se met à jour dynamiquement quand l'utilisateur clique sur une cellule H3. Valeurs par défaut = moyenne nationale de la zone d'Yaoundé.",
+    "nom_zone": "Yaoundé - Mbankolo",
+    "rsrp_moyen": -92.0,
+    "rsrq_moyen": -11.0,
+    "sinr_moyen": 13.2,
+    "debit_dl_mbps": 24.7,
+    "latence_ms": 38.0,
+    "taux_echecs_pct": 7.3,
+    "evolution_rsrp": {
+      "_commentaire": "Courbe d'évolution du RSRP moyen sur les 7 derniers jours pour la zone sélectionnée. Un point par jour. Format date: 'DD/MM'. Utilisé pour la courbe linéaire avec aire colorée.",
+      "_champs": {
+        "date": "Label affiché sous l'axe X (string, format 'DD/MM')",
+        "valeur": "RSRP moyen du jour en dBm (double)"
+      },
+      "donnees": [
+        {
+          "date": "06/05",
+          "valeur": -94.0
+        },
+        {
+          "date": "07/05",
+          "valeur": -91.0
+        },
+        {
+          "date": "08/05",
+          "valeur": -93.0
+        },
+        {
+          "date": "09/05",
+          "valeur": -89.0
+        },
+        {
+          "date": "10/05",
+          "valeur": -92.0
+        },
+        {
+          "date": "11/05",
+          "valeur": -90.0
+        },
+        {
+          "date": "12/05",
+          "valeur": -92.0
+        }
+      ]
+    },
+    "distribution_rsrp": {
+      "_commentaire": "Histogramme de distribution des valeurs RSRP brutes dans la zone. Chaque barre = une tranche de 10 dBm. pct = % des mesures qui tombent dans cette tranche. Permet de visualiser si le signal est concentré dans une plage.",
+      "_champs": {
+        "label": "Libellé de la tranche (string, ex: '<-110', '-110 à -100')",
+        "pct": "Pourcentage des mesures dans cette tranche (double, somme = ~100%)",
+        "couleur_hex": "Couleur hexadécimale associée à cette tranche (string, sans '#')"
+      },
+      "donnees": [
+        {
+          "label": "<-110",
+          "pct": 4.0,
+          "couleur_hex": "F85149"
+        },
+        {
+          "label": "-110 à -100",
+          "pct": 10.0,
+          "couleur_hex": "F0883E"
+        },
+        {
+          "label": "-100 à -90",
+          "pct": 18.0,
+          "couleur_hex": "D29922"
+        },
+        {
+          "label": "-90 à -80",
+          "pct": 35.0,
+          "couleur_hex": "8957E5"
+        },
+        {
+          "label": "-80 à -70",
+          "pct": 25.0,
+          "couleur_hex": "3FB950"
+        },
+        {
+          "label": ">-70",
+          "pct": 8.0,
+          "couleur_hex": "58A6FF"
+        }
+      ]
+    }
+  },
+  "_index_champs_nosql": {
+    "_commentaire": "Index recommandés pour MongoDB/Firestore afin d'optimiser les requêtes de ce dashboard.",
+    "indexes": [
+      {
+        "collection": "radio_audit_snapshots",
+        "champs": [
+          "filtre.operateur",
+          "filtre.periode"
+        ],
+        "type": "compound",
+        "raison": "Filtrage principal de la page"
+      },
+      {
+        "collection": "heatmap_h3_cells",
+        "champs": [
+          "lat",
+          "lng"
+        ],
+        "type": "2dsphere",
+        "raison": "Requêtes géospatiales par bbox pour le zoom carte"
+      },
+      {
+        "collection": "heatmap_h3_cells",
+        "champs": [
+          "rsrp_moyen",
+          "categorie"
+        ],
+        "type": "compound",
+        "raison": "Filtrage par qualité signal + tri"
+      },
+      {
+        "collection": "cellules_audit",
+        "champs": [
+          "tac",
+          "statut"
+        ],
+        "type": "compound",
+        "raison": "Filtrage tableau par TAC et statut"
+      },
+      {
+        "collection": "zones_blanches",
+        "champs": [
+          "type",
+          "coordonnees"
+        ],
+        "type": "2dsphere",
+        "raison": "Requêtes géospatiales zones blanches/mortes"
+      }
+    ]
+  }
+}
