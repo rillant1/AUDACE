@@ -1,0 +1,80 @@
+name: netprobe
+description: Application de mesure des métriques réseau — ART Cameroun
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.8
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Connectivité & réseau ───────────────────────────────────────────────
+  connectivity_plus: ^7.1.1
+  network_info_plus: ^7.0.0
+  http: ^1.2.0
+
+  # ── Infos système & appareil ────────────────────────────────────────────
+  device_info_plus: ^12.4.0
+  battery_plus: ^7.0.0
+  package_info_plus: ^9.0.1
+
+  # ── Géolocalisation ─────────────────────────────────────────────────────
+  geolocator: ^14.0.2
+
+  # ── Mesure réseau active (ping) ──────────────────────────────────────────
+  dart_ping: ^9.0.1
+
+  # ── Stockage local — file d'attente SQLite ───────────────────────────────
+  sqflite: ^2.3.2
+  path: ^1.9.0
+
+  # ── Service arrière-plan persistant (tourne même app fermée) ────────────
+  flutter_background_service: ^5.0.5
+  flutter_local_notifications: ^17.2.2
+
+  # ── Permissions runtime ─────────────────────────────────────────────────
+  permission_handler: ^12.0.1
+
+  # ── Utilitaires ─────────────────────────────────────────────────────────
+  uuid: ^4.3.3
+  intl: ^0.20.2
+  path_provider: ^2.1.3
+  share_plus: ^12.0.2
+  shared_preferences: ^2.3.0
+
+  # ── Sécurité & anonymisation ────────────────────────────────────────────
+  crypto: ^3.0.6
+
+  # ── Indexation géospatiale hexagonale Uber H3 ──────────────────────────
+  h3_flutter: ^0.7.1
+
+  # ── Cartographie (tuiles OpenStreetMap via flutter_map / Leaflet) ───────
+  flutter_map: ^8.3.0
+  latlong2: ^0.9.1
+
+  # ── UI ──────────────────────────────────────────────────────────────────
+  tutorial_coach_mark: ^1.2.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/icon.jpeg"
+  adaptive_icon_background: "#006A6A"
+  adaptive_icon_foreground: "assets/logo/icon_foreground.jpeg"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo/
+    - assets/operators/

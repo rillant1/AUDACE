@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Politique réseau AUDACE (DEBUG uniquement) :
+  - Serveurs locaux de développement : HTTP autorisé sur les IPs privées.
+  - Certificats utilisateur acceptés (Charles Proxy, mitmproxy…).
+  - Ce fichier est exclu des builds release par le système de variants Android.
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">192.168.0.180</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Politique réseau AUDACE (PRODUCTION) :
+  - Tout le trafic public : HTTPS uniquement, certificats système uniquement.
+  - Aucune exception cleartext. Les IPs de dev sont dans le variant debug.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
